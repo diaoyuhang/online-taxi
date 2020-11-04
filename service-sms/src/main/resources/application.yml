@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: service-sms
+server:
+  port: 8081
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7900/eureka

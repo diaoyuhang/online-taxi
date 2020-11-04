@@ -1,0 +1,10 @@
+server:
+  port: 7900
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+    fetch-registry: false #标识该客户端是否从eureka拉取注册信息
+    register-with-eureka: false #标识该服务信息是否需要向eureka注册，给其他人发现
