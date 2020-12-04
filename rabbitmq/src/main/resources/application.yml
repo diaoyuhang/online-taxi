@@ -1,0 +1,5 @@
+spring:
+  rabbitmq:
+    password: diao
+    username: diao
+    virtual-host: /diao
