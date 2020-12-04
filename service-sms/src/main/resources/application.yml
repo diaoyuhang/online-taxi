@@ -1,9 +1,28 @@
 spring:
   application:
     name: service-sms
-server:
-  port: 8081
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7900/eureka
+---
+server:
+  port: 8081
+spring:
+  profiles: 8081
+
+eureka:
+  instance:
+    metadata-map:
+      version: v1
+---
+server:
+  port: 8082
+spring:
+  profiles: 8082
+
+eureka:
+  instance:
+    metadata-map:
+      version: v2

@@ -1,8 +1,10 @@
 package com.diao.redis.controller;
 
+import com.diao.redis.service.RedisService;
 import com.google.common.util.concurrent.RateLimiter;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.data.redis.core.*;
+import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +28,22 @@ public class RedisController {
     private BeanFactory beanFactory;
 
     private RateLimiter rateLimiter = RateLimiter.create(5);
+
+    @Resource
+    private RedisService redisService;
+
+    @GetMapping("/generateCapthca")
+    public String generateCaptcha(String phoneNumber){
+        String result = redisService.generateCapthca(phoneNumber);
+        return result;
+    }
+
+    @GetMapping("/incr")
+    public Object incr(){
+        RedisAtomicLong diao = new RedisAtomicLong("diao", redisTemplate.getConnectionFactory());
+        long l = diao.get();
+        return l;
+    }
 
     @GetMapping("/limiting")
     public Boolean limiting() {
