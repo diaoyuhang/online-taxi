@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 8085
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7900/eureka
+#zuul:
+#  routes:
+#    xxx:
+#      path: /lb1/** #将*号后面的路径拼接到url后面，*代表一级，**代表所有
+#      url: forward:/ #转发到自己
+#      url: http://localhost:8080/
+#     api-passenger: /routeToService/**  #路由到服务，匹配到routeToService路径的，跳转到api-passenger服务
+
+#  sensitive-headers: ##解决敏感信息（Authorization，cookie）不向后面服务传

@@ -16,6 +16,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka8761:8761/eureka/,http://eureka8762:8762/eureka/,http://eureka8763:8763/eureka/
+    registry-fetch-interval-seconds: 5
   server:
     enable-self-preservation: false
 ---
