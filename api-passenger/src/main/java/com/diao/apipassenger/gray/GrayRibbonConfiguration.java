@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @Description:
  * @Date: 16:28 2020/11/24
  */
-@Configuration
+//@Configuration
 public class GrayRibbonConfiguration {
 
     @Bean

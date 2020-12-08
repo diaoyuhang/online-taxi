@@ -2,6 +2,7 @@ package com.diao.apipassenger.controller;
 
 import com.diao.apipassenger.entity.Shopping;
 import com.diao.apipassenger.service.FutureService;
+import com.diao.apipassenger.service.TestClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,10 +25,14 @@ public class TestController {
     @Resource
     private FutureService futureService;
 
+    @Resource
+    private TestClient testClient;
+
     @GetMapping("/test")
     public String test() {
-        String url = "http://service-sms/test/testLB";
-        String result = restTemplate.getForObject(url, String.class);
+//        String url = "http://service-sms/test/testLB";
+//        String result = restTemplate.getForObject(url, String.class);
+        String result = testClient.test();
         return result;
     }
 

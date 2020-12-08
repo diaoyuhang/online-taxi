@@ -19,6 +19,7 @@ public class TestController {
 
     @GetMapping("/testLB")
     public String test() {
+        int i = 1 / 0;
         System.out.println(port);
         return "success:" + port;
     }

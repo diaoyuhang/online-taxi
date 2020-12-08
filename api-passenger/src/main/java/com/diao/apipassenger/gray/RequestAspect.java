@@ -16,8 +16,8 @@ import java.util.HashMap;
  * @Description:
  * @Date: 16:34 2020/11/24
  */
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class RequestAspect {
 
     @Pointcut("execution(* com.diao.apipassenger.controller..*Controller*.*(..))")
