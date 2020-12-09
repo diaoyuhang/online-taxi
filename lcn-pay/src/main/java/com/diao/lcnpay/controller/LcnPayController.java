@@ -17,7 +17,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/pay")
-public class PayController {
+public class LcnPayController {
 
     @Resource
     private RestTemplate restTemplate;

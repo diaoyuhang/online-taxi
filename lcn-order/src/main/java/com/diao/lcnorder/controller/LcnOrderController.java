@@ -15,7 +15,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/order")
-public class OrderController {
+public class LcnOrderController {
 
     @Resource
     private TOrderDao tOrderDao;
